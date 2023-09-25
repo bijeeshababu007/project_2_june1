@@ -5,7 +5,7 @@ void main()
   runApp(MaterialApp(home: MusicPlayerUi(),));
 }
 
-class MusicPlayerUi extends StatelessWidget{
+class MusicPlayerU extends StatelessWidget{
   var images = ["https://live.staticflickr.com/7550/16236262561_422f7ed002.jpg",
     "https://i1.sndcdn.com/avatars-000323107180-0mrlt7-t500x500.jpg",
   "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a7/6a/2c/a76a2c6a-36ca-f252-030e-23319fd57dcc/XELMOB22127.jpg/1200x1200bf-60.jpg",
