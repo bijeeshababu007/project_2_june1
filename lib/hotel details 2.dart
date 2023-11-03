@@ -10,7 +10,7 @@ class HotelDetail extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            foregroundDecoration: BoxDecoration(
+            foregroundDecoration: const BoxDecoration(
               color: Colors.black26
             ),
             height: 400,
@@ -20,17 +20,17 @@ class HotelDetail extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 250,),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal:16.0),
-                  child: const Text("Crowne Plaza Kochi, Kerala",
+                const SizedBox(height: 250,),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal:16.0),
+                  child: Text("Crowne Plaza Kochi, Kerala",
                     style: TextStyle(color:Colors.white,
                     fontSize: 28.0,fontWeight: FontWeight.bold),
                   ),
                 ),
               Row(
                 children: [
-                  SizedBox(width: 16.0),
+                  const SizedBox(width: 16.0),
                   Container(
                     padding: const EdgeInsets.symmetric(
                         vertical: 8.0,
@@ -55,7 +55,7 @@ class HotelDetail extends StatelessWidget {
                    crossAxisAlignment: CrossAxisAlignment.start,
                    mainAxisSize: MainAxisSize.min,
                    children: [
-                     Row(
+                     const Row(
                  children:[
                   Expanded(
                     child: Column(
@@ -72,10 +72,6 @@ class HotelDetail extends StatelessWidget {
                   ],
                 ),
                 Text.rich(TextSpan(children: [
-                  // widgetSpan(
-                  //     child:Icon(Icons.location_on,size: 16.0,
-                  //     color:Colors.grey)
-                  // ),
                   TextSpan(
                     text:"8 km to LuluMall"
                   )
@@ -105,27 +101,26 @@ class HotelDetail extends StatelessWidget {
          shape: RoundedRectangleBorder(
              borderRadius: BorderRadius.circular(50)
          ),
-         color: Colors.greenAccent[400],
+         color: Colors.purple,
     child:Text("Book Now",style: TextStyle(
-      fontWeight: FontWeight.normal
-    ),),
-    padding: EdgeInsets.symmetric(
+      fontWeight: FontWeight.normal,color: Colors.white),),
+    padding: const EdgeInsets.symmetric(
       vertical:16.0,
       horizontal:32.0,),
      ),
     ),
-    SizedBox(height:30.0),
+    const SizedBox(height:30.0),
     Text("Ramada Plaza Plam Grove".toUpperCase(),
-      style: TextStyle(fontWeight: FontWeight.w600,
+      style: const TextStyle(fontWeight: FontWeight.w600,
           fontSize: 14.0),
     ),
-    SizedBox(height: 10.0,),
-    Text("Nestled by Vembanad Lake,Crowne Plaza Kochi is a luxurious property catering to corporate and social gatherings. With modern design, exceptional hospitality, and a strategic location, it offers convenience for business and leisure travelers.",
+    const SizedBox(height: 10.0,),
+    const Text("Nestled by Vembanad Lake,Crowne Plaza Kochi is a luxurious property catering to corporate and social gatherings. With modern design, exceptional hospitality, and a strategic location, it offers convenience for business and leisure travelers.",
       textAlign:TextAlign.justify,
       style: TextStyle(fontWeight: FontWeight.w300,
           fontSize: 14.0),),
-                     SizedBox(height: 10.0,),
-                     Text("Crowne Plaza Kochi is ideally located on the new business district of the city NH 47 Bypass and provides easy access to Info Park Kakkanad, Cochin Special Economic Zone, M.G. Road, Cochin Port, Shipyard, Naval Base, major sightseeing areas like Fort Kochi, Mattancherry and is 45 minutes away from Cochin International Airport.", textAlign:TextAlign.justify,
+                     const SizedBox(height: 10.0,),
+                     const Text("Crowne Plaza Kochi is ideally located on the new business district of the city NH 47 Bypass and provides easy access to Info Park Kakkanad, Cochin Special Economic Zone, M.G. Road, Cochin Port, Shipyard, Naval Base, major sightseeing areas like Fort Kochi, Mattancherry and is 45 minutes away from Cochin International Airport.", textAlign:TextAlign.justify,
                        style: TextStyle(fontWeight: FontWeight.w300,
                            fontSize: 14.0),)
               ],
@@ -142,21 +137,9 @@ class HotelDetail extends StatelessWidget {
               backgroundColor: Colors.transparent,
               elevation: 0,
              centerTitle: true,
-             title: Text("DETAILS",style: TextStyle(fontSize:16.0 ,fontWeight:FontWeight.normal ),),
+             title: const Text("DETAILS",style: TextStyle(fontSize:16.0 ,fontWeight:FontWeight.normal ),),
             ),
           ),
-      Align(
-        alignment:Alignment.bottomLeft,
-      child: BottomNavigationBar(
-        backgroundColor: Colors.white54,
-          elevation: 0,
-          selectedItemColor: Colors.black,
-          items: [
-        BottomNavigationBarItem(icon: Icon(Icons.search),),
-      BottomNavigationBarItem(icon: Icon(Icons.favorite_border),),
-        BottomNavigationBarItem(icon: Icon(Icons.settings),),
-      ])
-      ),
         ],
       ),
     );

@@ -65,7 +65,7 @@ class StagGrid extends StatelessWidget{
           Stack(
             children: [
               Container(
-                height: 200,
+                height: 300,width: 350,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.fill,
@@ -73,8 +73,8 @@ class StagGrid extends StatelessWidget{
                 ),
               ),
               Positioned(
-                bottom: 30,
-                right: 100,
+                bottom: 0,
+                 right: 100,
                 child: Column(
                   children: [
                     Text(name[1],style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),

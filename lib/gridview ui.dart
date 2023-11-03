@@ -7,6 +7,7 @@ class Shopping extends StatelessWidget {
     var price=[120.00,58.00,35.00,98.00,34.00,12.00];
     var image = ["assets/images/bag.png","assets/images/glass.jpg","assets/images/belt.png","assets/images/chain.png","assets/images/earrings.png","assets/images/socks.png"];
     @override
+
     Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

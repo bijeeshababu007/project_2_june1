@@ -22,47 +22,111 @@ class MusicPlayer1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        elevation: 0,
-        title: Text("Musify.",style:TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.red[100]),
+        backgroundColor: Colors.black,
+        centerTitle: true,
+        title: Text("Musify.",
+          style:TextStyle(fontSize: 30,fontWeight: FontWeight.bold,color: Colors.red[200]),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(15.0),
-            child:Image.network("https://i.scdn.co/image/ab67706c0000da8491b2ba52a623cd03246aee74",
-              height: MediaQuery.of(context).size.height *0.3,
-              width: MediaQuery.of(context).size.height *0.3,
-            fit: BoxFit.cover),
+      body: ListView(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("Suggested playlist",
+              style: TextStyle(color: Colors.red[200],
+                  fontSize: 25, fontWeight: FontWeight.bold),
             ),
-             const SizedBox(height: 30,),
-            Row(
-              children: [Text("Recommended for you",
-                  style:TextStyle(fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.red[100]),
-              ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ListView(
-                        children: List.generate(5, (index) => Card(
-                           child: ListTile(
-                           title: Text(name[index]),
-                          subtitle: Text(sub[index]),
-                           leading: CircleAvatar(
-                           backgroundImage: AssetImage(image[index]),
-                           ),
-                           ),
-                        ),
-                        ),
+          ),
+          Container(
+            height: 220,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    width: 300,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: const DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage("https://i.scdn.co/image/ab67706c0000da84fb193c265e5c4ba22d153cc4"),
                       ),
                     ),
-                  ],
-                ),],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    width: 300,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: const DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage("https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/b9/de/d7/b9ded714-598a-4566-dfe8-2ecd1d8958f4/artwork.jpg/1200x1200bf-60.jpg"),
+                   ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-        ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Recommended For You",
+              style: TextStyle(
+                  color: Colors.red[200],
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+          Container(
+            height: 600,
+            child: ListView.builder(
+              itemCount: 7,
+              itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: Container(
+                    width: 70,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(image[index]),
+                      ),
+                    ),
+                  ),
+                  title: Text(
+                    name[index],
+                    style:TextStyle(color: Colors.red[200], fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Text(
+                    sub[index],
+                    style: const TextStyle(
+                        color: Colors.white70, fontSize: 13,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  trailing: const Wrap(
+                    spacing: 5,
+                    children: [
+                      Icon(Icons.star_border, color: Colors.pinkAccent,
+                      ),
+                      Icon(
+                        Icons.download_outlined, color: Colors.pinkAccent,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -18,10 +18,10 @@ class Main extends StatefulWidget{
 
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Hello There!",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 40),
+          const Text("Hello There!",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 40),
           ),
-          SizedBox(height: 30,),
-          Text("Automatic identity verification which enable you to verify your identity",
+          const SizedBox(height: 30,),
+          const Text("Automatic identity verification which enable you to verify your identity",
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: Colors.black,
@@ -30,31 +30,31 @@ class Main extends StatefulWidget{
           ),
           Container(
             height: MediaQuery.of(context).size.height/3,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 image:DecorationImage(
                     image: AssetImage("assets/images/hmp.jpg"))
             ),
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
         MaterialButton(
           onPressed: (){},
              shape:RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(50)
             ),
           color: Colors.greenAccent[700],
-          child: Text("Login",style: TextStyle(
+          child: const Text("Login",style: TextStyle(
               fontWeight: FontWeight.w600,fontSize: 16,color: Colors.white70
           ),
           ),
         ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           MaterialButton(
             onPressed: (){},
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(50)
             ),
             color: Colors.greenAccent[400],
-            child: Text("Sign UP",style: TextStyle(
+            child: const Text("Sign UP",style: TextStyle(
               fontWeight: FontWeight.w600,fontSize: 16,color: Colors.white,
             ),
             ),

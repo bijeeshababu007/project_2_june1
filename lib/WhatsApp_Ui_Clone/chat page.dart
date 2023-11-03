@@ -18,53 +18,56 @@ class ChatPage extends StatelessWidget{
     'assets/images/img5.jpg',
     'assets/images/img6.jpg'];
 
-  var message = ["hi", "hello", "di", "mrng", "hey","gni8"];
-  @override
+  var message = ["hi", "hello", "di", "hlo", "hey","hy"];
 
+  var time = ["3.59 pm","3.17 pm","2.48 pm","12.45 pm","12.33 pm","10.34 am"];
+
+  var num = ["1","2","1","2","1","3"];
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: Text("WhatsApp"),
+        title: const Text("WhatsApp"),
         actions: [
-          Icon(Icons.camera_alt),
-          SizedBox(width: 20,),
-          Icon(Icons.search ),
-          SizedBox(width: 20,),
+          const Icon(Icons.camera_alt),
+          const SizedBox(width: 20,),
+          const Icon(Icons.search ),
+          const SizedBox(width: 20,),
           PopupMenuButton(itemBuilder : (context){
             return[
-              PopupMenuItem(child: Text('New Group')),
-              PopupMenuItem(child: Text("New broadcast")),
-              PopupMenuItem(child: Text("Linked device")),
-              PopupMenuItem(child: Text("Starres message")),
-              PopupMenuItem(child: Text("Payments")),
-              PopupMenuItem(child: Text("Settings")),
+              const PopupMenuItem(child: Text('New Group')),
+              const PopupMenuItem(child: Text("New broadcast")),
+              const PopupMenuItem(child: Text("Linked device")),
+              const PopupMenuItem(child: Text("Starred message")),
+              const PopupMenuItem(child: Text("Payments")),
+              const PopupMenuItem(child: Text("Settings")),
             ];
           },
           ),
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: ListView(
-          children: List.generate(
-              6,
+          children: List.generate(6,
                   (index) => Card(
                   child: ListTile(
                     title: Text(name[index]),
-                    subtitle: Text("\$ ${message[index]}"),
+                    subtitle: Text("${message[index]}"),
                     leading: CircleAvatar(
                       backgroundImage: AssetImage(image[index]),
                     ),
-                    trailing: const Wrap(
+                    trailing:  Wrap(
                         direction: Axis.vertical,
-                        children: [Text("11.00"),
+                        children: [
+                          Text(time[index]),
                           SizedBox(width: 10,),
                           CircleAvatar(
                             maxRadius: 8,
                             minRadius: 4,
                             backgroundColor: Colors.green,
-                            child: Text('3'),
+                            child: Text(num[index]),
                           )
                         ]),
                   )
