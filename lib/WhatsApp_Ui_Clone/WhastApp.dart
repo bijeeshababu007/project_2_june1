@@ -16,17 +16,9 @@ class WhatsApp extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-          child:ShaderMask(
-            blendMode: BlendMode.srcIn,
-            shaderCallback:(Rect bounds)=> const LinearGradient(
-              begin: Alignment.bottomCenter,
-              end: Alignment.topCenter,
-              colors: [Colors.green,],
-            ).createShader(bounds),
+            child: const FaIcon(FontAwesomeIcons.whatsapp,size: 100,color: Colors.green,),
 
-            child: const FaIcon(FontAwesomeIcons.whatsapp,size: 100,),
-
-          )),
+          )
     );
   }
 }
